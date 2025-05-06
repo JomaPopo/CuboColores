@@ -25,7 +25,7 @@ public class MovementPlayer : Player
 
     private void FixedUpdate()
     {
-        _compRigidbody.velocity = new Vector2(direction * speed, _compRigidbody.velocity.y);
+        _compRigidbody.linearVelocity = new Vector2(direction * speed, _compRigidbody.linearVelocity.y);
     }
 
   
@@ -41,11 +41,11 @@ public class MovementPlayer : Player
         {
             if (grounded)
             {
-                _compRigidbody.velocity = new Vector2(_compRigidbody.velocity.x, jumpforce);
+                _compRigidbody.linearVelocity = new Vector2(_compRigidbody.linearVelocity.x, jumpforce);
             }
             else if (doublejump)
             {
-                _compRigidbody.velocity = new Vector2(_compRigidbody.velocity.x, jumpforce);
+                _compRigidbody.linearVelocity = new Vector2(_compRigidbody.linearVelocity.x, jumpforce);
                 doublejump = false;
             }
         }
