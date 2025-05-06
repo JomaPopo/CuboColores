@@ -20,6 +20,7 @@ public class GameManager : MonoBehaviour
     public int LIFEEE;
     //public UnityEvent OnDiedEscene;
     public static event Action OnDiedEscene;
+    public GameIntEvent E_CoinCollected;
 
 
     void OnEnable()
@@ -27,13 +28,13 @@ public class GameManager : MonoBehaviour
 
         VidaPersonaje.OnHeartTouched += AumentarVida;
         VidaPersonaje.OnTouchDoorWin += GanasteFinal;
-        Player.OnCoinCollected += AddPoints;
+        
     }
     void OnDisable()
     {
         VidaPersonaje.OnHeartTouched -= AumentarVida;
         VidaPersonaje.OnTouchDoorWin -= GanasteFinal;
-        Player.OnCoinCollected -= AddPoints;
+        
     }
 
 
