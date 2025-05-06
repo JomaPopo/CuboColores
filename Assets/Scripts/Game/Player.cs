@@ -11,13 +11,7 @@ public class Player : MonoBehaviour
     {
         if (other.CompareTag("Coin")) // Verificar si ha colisionado con una moneda
         {
-
-
-
-
             OnCoinCollected?.Invoke();
-
-
         }
     }
 }

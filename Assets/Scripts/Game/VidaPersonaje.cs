@@ -14,18 +14,13 @@ public class VidaPersonaje : Player
     // public UnityEvent OnTouchDoorWin;
     public CameraShake cameraShake;
 
-    public static event Action OnHeartTouched;
-    public static event Action OnTouchDoorWin;
-    void OnEnable()
-    {
+    //public static event Action OnHeartTouched;
+    //public static event Action OnTouchDoorWin;
 
-        GameManager.OnDiedEscene += CambioDeEscena;
-    }
-    void OnDisable()
-    {
-        GameManager.OnDiedEscene -= CambioDeEscena;
-    }
+    public GameEvent E_HeartTouched;
+    public GameEvent E_DoorWin;
 
+    public GameEvent E_Died;
     void Start()
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
@@ -78,11 +73,15 @@ public class VidaPersonaje : Player
         else if (collision.CompareTag("MUERTEVACIO"))
         {
             vida = 0;
+            Debug.Log("mori?");
+            E_Died.Raise();
             cameraShake.ShakeCamera(2);
+           
         }
         else if (collision.CompareTag("Life"))
         {
-            OnHeartTouched?.Invoke();
+            E_HeartTouched.Raise();
+           // OnHeartTouched?.Invoke();
         }
         else if (collision.CompareTag("Marron1"))
         {
@@ -90,7 +89,7 @@ public class VidaPersonaje : Player
         }
         else if (collision.CompareTag("Marron2"))
         {
-            OnTouchDoorWin?.Invoke();
+            E_DoorWin.Raise();
         }
 
 

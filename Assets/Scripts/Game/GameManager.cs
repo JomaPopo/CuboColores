@@ -19,20 +19,22 @@ public class GameManager : MonoBehaviour
     public int puntos;
     public int LIFEEE;
     //public UnityEvent OnDiedEscene;
-    public static event Action OnDiedEscene;
-
+    //public static event Action OnDiedEscene;
+    public GameEvent E_Died;
+    public GameEvent E_HeartTouched;
+    public GameEvent E_DoorWin;
 
     void OnEnable()
     {
 
-        VidaPersonaje.OnHeartTouched += AumentarVida;
-        VidaPersonaje.OnTouchDoorWin += GanasteFinal;
+        //VidaPersonaje.OnHeartTouched += AumentarVida;
+        //VidaPersonaje.OnTouchDoorWin += GanasteFinal;
         Player.OnCoinCollected += AddPoints;
     }
     void OnDisable()
     {
-        VidaPersonaje.OnHeartTouched -= AumentarVida;
-        VidaPersonaje.OnTouchDoorWin -= GanasteFinal;
+       // VidaPersonaje.OnHeartTouched -= AumentarVida;
+       // VidaPersonaje.OnTouchDoorWin -= GanasteFinal;
         Player.OnCoinCollected -= AddPoints;
     }
 
@@ -44,6 +46,7 @@ public class GameManager : MonoBehaviour
 
     void Update()
     {
+
         CambiarMuerto();
 
     }
@@ -76,9 +79,11 @@ public class GameManager : MonoBehaviour
     }
 
 
-    public void AumentarVida()
+    public void OnHeartTouched()
     {
+        
         personajevida.vida = personajevida.vida + LIFEEE;
+        Debug.Log("aumente vida wasa");
         Debug.Log("Vida actual: " + personajevida.vida);
 
 
@@ -88,18 +93,22 @@ public class GameManager : MonoBehaviour
     {
         if (personajevida.vida <= 0)
         {
-            OnDiedEscene?.Invoke();
+            E_Died.Raise();
         }
 
     }
-
+    
     public void GanasteCausa()
     {
 
         SceneManager.LoadScene("game2");
     }
-    public void GanasteFinal()
+    public void OnDoorWin()
     {
         SceneManager.LoadScene("Gano");
+    }
+    public void OnDiedScene()
+    {
+        SceneManager.LoadScene("Perdio");
     }
 }
