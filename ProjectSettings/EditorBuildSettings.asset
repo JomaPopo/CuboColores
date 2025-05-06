@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1045 &1
+EditorBuildSettings:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/Inicio.unity
+    guid: 2cda990e2423bbf4892e6590ba056729
+  - enabled: 1
+    path: Assets/Scenes/Gano.unity
+    guid: 3974f9439277af94dadb69d8d902f53c
+  - enabled: 1
+    path: Assets/Scenes/game2.unity
+    guid: ae54c76fa94bd874d873c30113410328
+  - enabled: 1
+    path: Assets/Scenes/game1.unity
+    guid: c316e2e1f3060b640b1810557ce536ed
+  - enabled: 1
+    path: Assets/Scenes/Perdio.unity
+    guid: 1cb86b726bc8405429797c006d3f0170
+  m_configObjects: {}

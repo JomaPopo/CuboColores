@@ -1,0 +1,64 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!78 &1
+TagManager:
+  serializedVersion: 2
+  tags:
+  - Suelo
+  - Marron1
+  - Enemy
+  - MUELTE
+  - Azul
+  - Rojo
+  - Amarillo
+  - fondo
+  - Coin
+  - Life
+  - Marron2
+  - MUERTEVACIO
+  layers:
+  - Default
+  - TransparentFX
+  - Ignore Raycast
+  - 
+  - Water
+  - UI
+  - BackGround
+  - GAME
+  - Plataformas
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  m_SortingLayers:
+  - name: Default
+    uniqueID: 0
+    locked: 0
+  - name: fondo
+    uniqueID: 4271031353
+    locked: 0
+  - name: Plataformas
+    uniqueID: 3983819877
+    locked: 0
+  - name: objetos
+    uniqueID: 1017890507
+    locked: 0
